@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/big_event
+    username: root
+    password: ${DB_PASSWORD}
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: ${REDIS_PASSWORD}
+  servlet:
+    multipart:
+      max-file-size: 5MB      # 单文件上限
+      max-request-size: 10MB  # 整个请求上限（多文件+表单字段总和）
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true #开启驼峰命名和下划线命名自动转换
+#JWT密钥
+jwt:
+  secret: ${JWT_SECRET}
+#图片本地真实存放路径
+real:
+  path: ${REAL_PATH}
+#浏览器访问前缀（自定义）
+web:
+  prefix: ${WEB_PREFIX}
+#上传文件白名单配置
+upload:
+  allowed-extensions: jpg,jpeg,png,pdf
+  allowed-content-types: image/jpeg,image/png,application/pdf
+
